@@ -15,7 +15,6 @@
             classpath:config/spring-hibernate.xml,
         </param-value>
     </context-param>
-
     <!-- spring MVC config start-->
     <servlet>
         <servlet-name>spring</servlet-name>

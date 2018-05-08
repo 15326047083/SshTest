@@ -7,6 +7,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,8 +31,12 @@ public class PersonRepositoryImpl implements PersonRepository {
 		return (Person) getCurrentSession().get(Person.class, id);
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Person> findAll() {
-		return null;
+		List<Person> list = new ArrayList<Person>();
+		list = getCurrentSession().createQuery("from Person").list();
+		System.out.println(list);
+		return list;
 	}
 
 	public void persist(Person entity) {

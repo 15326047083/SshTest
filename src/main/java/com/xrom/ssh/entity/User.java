@@ -1,22 +1,36 @@
 package com.xrom.ssh.entity;
 
+import javax.persistence.*;
+
+import org.hibernate.annotations.GenericGenerator;
+
 /**
  * 用户表实体类
  * 
  * @author HP5
  *
  */
+@Entity
+@Table(name = "user")
 public class User {
-	private int userId;
+	@Id
+	@GeneratedValue(generator = "native")
+	@GenericGenerator(name = "native", strategy = "native")
+	private Long id;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "password")
 	private String password;
+	@Column(name = "sex")
 	private String sex;
+	@Column(name = "birthday")
 	private String birthday;
+	@Column(name = "flag")
 	private int flag;
 
 	@Override
 	public String toString() {
-		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", sex=" + sex + ", birthday="
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", sex=" + sex + ", birthday="
 				+ birthday + ", flag=" + flag + "]";
 	}
 
@@ -24,9 +38,9 @@ public class User {
 
 	}
 
-	public User(int userId, String email, String password, String sex, String birthday, int flag) {
+	public User(Long id, String email, String password, String sex, String birthday, int flag) {
 		// super();
-		this.userId = userId;
+		this.id = id;
 		this.email = email;
 		this.password = password;
 		this.sex = sex;
@@ -34,12 +48,12 @@ public class User {
 		this.flag = flag;
 	}
 
-	public int getUserId() {
-		return userId;
+	public Long getid() {
+		return id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setid(Long id) {
+		this.id = id;
 	}
 
 	public String getEmail() {

@@ -16,7 +16,6 @@ public class PersonServiceImpl implements PersonService {
     @Autowired(required = true)
     private PersonRepository personRepository;
 
-    @Override
     public Long savePerson() {
         Person person = new Person();
         person.setUsername("XRog");

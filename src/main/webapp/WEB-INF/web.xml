@@ -36,6 +36,7 @@
     <!-- Spring监听器 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+        				
     </listener>
 
     <!--  字符集过滤  -->

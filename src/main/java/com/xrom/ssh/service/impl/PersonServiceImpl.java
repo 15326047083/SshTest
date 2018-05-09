@@ -27,7 +27,6 @@ public class PersonServiceImpl implements PersonService {
 		return personRepository.save(person);
 	}
 
-	@Override
 	public List<Person> findAll() {
 		// TODO Auto-generated method stub
 		return personRepository.findAll();

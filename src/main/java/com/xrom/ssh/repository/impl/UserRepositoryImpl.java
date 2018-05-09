@@ -21,52 +21,42 @@ public class UserRepositoryImpl implements UserRepository {
 		return this.sessionFactory.openSession();
 	}
 
-	@Override
 	public User load(Long id) {
 		// TODO Auto-generated method stub
 		return (User) getCurrentSession().load(User.class, id);
 	}
 
-	@Override
 	public User get(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
 		List<User> list = new ArrayList<User>();
 		list = getCurrentSession().createQuery("from user").list();
 		return list;
 	}
-
-	@Override
 	public void persist(User entity) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public Long save(User entity) {
 		// TODO Auto-generated method stub
 		return (Long) getCurrentSession().save(entity);
 	}
 
-	@Override
 	public void saveOrUpdate(User entity) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 
 	}
-
-	@Override
 	public void flush() {
 		// TODO Auto-generated method stub
 

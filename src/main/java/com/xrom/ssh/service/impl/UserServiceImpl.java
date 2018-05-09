@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	@Override
 	public Long save(User user) {
 		// TODO Auto-generated method stub
 		return (Long) userRepository.save(user);
